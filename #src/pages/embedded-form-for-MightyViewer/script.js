@@ -7,24 +7,33 @@
 
 
 
-
     let arrayInputsExpression = [
         form.querySelector('#checkbox25062112101s'),
-        form.querySelector('#checkbox25062112102s'),
+        // form.querySelector('#checkbox25062112102s'),
     ];
 
     let arrayInputs = [];
+    let arrayInputsExp = [];
+    let newArrayInputs = [];
 
     for (let i = 0; i < inputs.length; i++) {
-        console.log(inputs[i].id);
-        arrayInputs = inputs[i].id + ',' + arrayInputs.slice(0, -1);
+        // console.log(inputs[i].id);
+        arrayInputs = inputs[i].id + ',' + arrayInputs;
     }
-    console.log(arrayInputs);
-    arrayInputs = arrayInputs.split(',');
-    console.log('arr: ', arrayInputs);
+    // console.log(arrayInputs);
+    arrayInputs = arrayInputs.slice(0, -1).split(',');
+    // console.log('arr: ', arrayInputs);
 
+    for (let i = 0; i < arrayInputsExpression.length; i++) {
+        arrayInputsExp = arrayInputsExpression[i].id + ',' + arrayInputsExp;
+    }
+    arrayInputsExp = arrayInputsExp.slice(0, -1).split(',');
+    // console.log(arrayInputsExp);
+    newArrayInputs = arrayInputs.filter( function( el ) {
+        return arrayInputsExp.indexOf( el ) < 0;
+    } );
 
-
+    console.log(newArrayInputs);
 
 
     setTimeout(function () {
@@ -74,6 +83,18 @@
         inputs[i].addEventListener("click", check);
         inputs[i].addEventListener("keyup", check);
     }
+
+    // for (let i = 0; i < inputs.length; i++) {
+    //
+    //     for (let j = 0; j < newArrayInputs.length; j++) {
+    //
+    //         if (inputs[i].id === newArrayInputs[j]) {
+    //             console.log(inputs[i]);
+    //             inputs[i].addEventListener("click", check);
+    //             inputs[i].addEventListener("keyup", check);
+    //         }
+    //     }
+    // }
     btn.addEventListener("click", check);
 
 
