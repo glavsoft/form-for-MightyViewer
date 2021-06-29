@@ -5,6 +5,28 @@
     let inputs = form.querySelectorAll('input');
     let btn = form.querySelector("#btn2806211546");
 
+
+
+
+    let arrayInputsExpression = [
+        form.querySelector('#checkbox25062112101s'),
+        form.querySelector('#checkbox25062112102s'),
+    ];
+
+    let arrayInputs = [];
+
+    for (let i = 0; i < inputs.length; i++) {
+        console.log(inputs[i].id);
+        arrayInputs = inputs[i].id + ',' + arrayInputs.slice(0, -1);
+    }
+    console.log(arrayInputs);
+    arrayInputs = arrayInputs.split(',');
+    console.log('arr: ', arrayInputs);
+
+
+
+
+
     setTimeout(function () {
         btn.setAttribute('disabled', '');
     }, 3000)
