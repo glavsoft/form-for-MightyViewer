@@ -1,0 +1,66 @@
+/* Header (logo and menu)
+ =======================================*/
+
+.title-and-menu[data-2306211815] {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    @media (max-width: 927px) {
+        align-items: center;
+    }
+    @media(max-width: 767px) {
+        flex-wrap: nowrap;
+    }
+
+    & > .container {
+        display: flex;
+        margin-bottom: 7px;
+
+        & > .logo {
+            flex: 0 0 90px;
+            overflow: hidden;
+            position: relative;
+            z-index: 3;
+            margin-right: 15px;
+            display: flex;
+
+            @media (max-width: 767px) {
+                //flex: 0 0 80px;
+            }
+            @media (max-width: 480px) {
+                //flex: 0 0 72px;
+                flex: 0 0 60px;
+            }
+
+            & > img {
+                max-width: 100%;
+                display: block;
+            }
+        }
+        & > .title {
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 355px;
+            margin-right: auto;
+
+            & > h3 {
+                margin: 0;
+            }
+            & > p {
+                margin: 0 0 -3px 0;
+
+                @media (max-width: 480px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+

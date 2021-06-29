@@ -1,0 +1,95 @@
+.embedded-form-MV[data-2306211538] {
+    padding: 30px 20px;
+    font-family: Graphik,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+
+    & > .form {
+        max-width: 880px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 40px;
+        box-sizing: border-box;
+        border: 1px solid rgba(0, 0, 0, .1);
+        border-radius: 2px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
+        user-select: none;
+
+        & > * {
+            margin: 10px;
+        }
+        & > .title {
+            margin-top: 12px;
+            margin-bottom: 12px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        & > .paragraph {
+
+        }
+        & > .checkbox {
+            display: block;
+
+            & > input {
+                margin: 0 5px 0 0;
+            }
+            & > .paragraph {
+                display: inline;
+
+                & > span {
+                    color: #ff0000;
+                }
+            }
+        }
+        & > * ~ * {
+            font-size: 18px;
+        }
+        & > .paragraph {
+
+        }
+        & > .input > input, & > .button {
+            display: inline;
+            height: 30px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 4px;
+        }
+        & > .input {
+            position: relative;
+            white-space: nowrap;
+
+            & > input {
+                position: relative;
+                background: #eeeeee;
+                border-color: #e6e6e6;
+                border-style: solid;
+            }
+        }
+        & > .input:after {
+            content: "*";
+            position: absolute;
+            color: #ff0000;
+            bottom: 1%;
+            right: 4%;
+        }
+        & > .button {
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            padding: 4px;
+            background-color: #0de0e0;
+            background: linear-gradient(to top, #0aa6a6, #37f3f3);
+        }
+        & > .button:hover {
+            transition: all 60ms ease-in-out 30ms;
+            opacity: .9;
+            position: relative;
+            top: -1px;
+        }
+        & > .button[disabled] {
+            opacity: .5;
+            cursor: default;
+        }
+        & > .button[disabled]:hover {
+            top: 0;
+        }
+    }
+}

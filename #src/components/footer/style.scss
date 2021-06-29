@@ -1,0 +1,27 @@
+/* Footer
+ =======================================*/
+
+.footer-container[data-2306211639] {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    & > .item {
+        font-size: 13px;
+    }
+    & > .privacy {
+
+        & > .link {
+
+        }
+    }
+    & > .copyright {
+
+        & > .paragraph {
+            color: #000000;
+            margin: 0 auto;
+            text-align: right;
+        }
+    }
+}
