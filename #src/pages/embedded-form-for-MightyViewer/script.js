@@ -6,34 +6,38 @@
     let btn = form.querySelector("#btn2806211546");
 
 
-
-    let arrayInputsExpression = [
+    //Создаем список исключений выбор которых не будут влиять на кнупку отправить
+    let arrayInputsExceptions = [
         form.querySelector('#checkbox25062112101s'),
-        // form.querySelector('#checkbox25062112102s'),
+        form.querySelector('#checkbox25062112102s'),
     ];
 
-    let arrayInputs = [];
-    let arrayInputsExp = [];
-    let newArrayInputs = [];
-
+    let arrayX = [];
     for (let i = 0; i < inputs.length; i++) {
-        // console.log(inputs[i].id);
-        arrayInputs = inputs[i].id + ',' + arrayInputs;
+        arrayX = arrayX.concat(inputs[i]);
     }
-    // console.log(arrayInputs);
-    arrayInputs = arrayInputs.slice(0, -1).split(',');
-    // console.log('arr: ', arrayInputs);
+    console.log(arrayX);
 
-    for (let i = 0; i < arrayInputsExpression.length; i++) {
-        arrayInputsExp = arrayInputsExpression[i].id + ',' + arrayInputsExp;
+    let array1 = ['a', 'b', 'c', 'd', 'e', 'f'];
+    let array2 = ['e', 'c'];
+    let arrayIndex = [];
+    let zz = [];
+
+    for (let i = 0; i < arrayX.length; i++) {
+        for (let j = 0; j < arrayInputsExceptions.length; j++) {
+            if (inputs[i] === arrayInputsExceptions[j]) {
+                arrayIndex = arrayIndex.concat(arrayX.indexOf(arrayInputsExceptions[j]))
+
+            }
+        }
     }
-    arrayInputsExp = arrayInputsExp.slice(0, -1).split(',');
-    // console.log(arrayInputsExp);
-    newArrayInputs = arrayInputs.filter( function( el ) {
-        return arrayInputsExp.indexOf( el ) < 0;
-    } );
 
-    console.log(newArrayInputs);
+
+
+
+    console.log(arrayIndex);
+
+
 
 
     setTimeout(function () {
