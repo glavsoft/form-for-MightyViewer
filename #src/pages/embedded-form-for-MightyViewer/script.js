@@ -1,105 +1,63 @@
 (function () {
 
     let form = document.querySelector(".embedded-form-MV[data-2306211538] > .form");
-
-    let inputs = form.querySelectorAll('input');
+    //если не будет этого класса to-connect-with то инпуты не будут завязаны с кнопкой отправить
+    let inputs = form.querySelectorAll('input.to-connect-with');
     let btn = form.querySelector("#btn2806211546");
-
-
-    //Создаем список исключений выбор которых не будут влиять на кнупку отправить
-    let arrayInputsExceptions = [
-        form.querySelector('#checkbox25062112101s'),
-        form.querySelector('#checkbox25062112102s'),
-    ];
-
-    let arrayX = [];
-    for (let i = 0; i < inputs.length; i++) {
-        arrayX = arrayX.concat(inputs[i]);
-    }
-    console.log(arrayX);
-
-    let array1 = ['a', 'b', 'c', 'd', 'e', 'f'];
-    let array2 = ['e', 'c'];
-    let arrayIndex = [];
-    let zz = [];
-
-    for (let i = 0; i < arrayX.length; i++) {
-        for (let j = 0; j < arrayInputsExceptions.length; j++) {
-            if (inputs[i] === arrayInputsExceptions[j]) {
-                arrayIndex = arrayIndex.concat(arrayX.indexOf(arrayInputsExceptions[j]))
-
-            }
-        }
-    }
-
-
-
-
-    console.log(arrayIndex);
-
-
-
 
     setTimeout(function () {
         btn.setAttribute('disabled', '');
     }, 3000)
 
-    let countAllCheckbox = null;
-    let countAllEmail = null;
+    btn.addEventListener('click', getChecked);
+
     for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].type === 'checkbox') {
-            countAllCheckbox++
-        }
-        if (inputs[i].type === 'email') {
-            countAllEmail++
-        }
+        inputs[i].addEventListener('click', getChecked);
+        inputs[i].addEventListener('keyup', getChecked);
     }
 
-    function check() {
-        let checked = false;
-        let filled = false;
-        let checkedCheckbox = null;
-        let filledEmail = null;
+    function getChecked() {
+        let allEmptyCheckboxes = true;
+        let allEmptyEmail = true;
+        let selectedAllCheckbox = null;
+        let filledAllEmail = false;
+        let numberAllCheckboxes = null;
+        let numberAllInputEmail = null;
 
         for (let i = 0; i < inputs.length; i++) {
-            if (inputs[i].type === 'email' && !!inputs[i].value === true) {
-                filledEmail++
+            if (inputs[i].type === 'checkbox') {
+                numberAllCheckboxes++
             }
-            if (inputs[i].type === 'checkbox' && !!inputs[i].checked === true) {
-                checkedCheckbox++
+            if (inputs[i].type === 'text') {
+                numberAllInputEmail++
             }
         }
 
-        if (countAllCheckbox === checkedCheckbox) {
-            checked = true;
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i].type === 'checkbox' && inputs[i].checked === true) {
+                let numberCheckedCheckboxes = !!inputs[i];
+                selectedAllCheckbox += numberCheckedCheckboxes;
+
+                if (numberAllCheckboxes === selectedAllCheckbox) {
+                    allEmptyCheckboxes = false;
+                }
+            }
+            if (inputs[i].type === 'text' && inputs[i].value !== '') {
+                let numberFilledEmail = !!inputs[i];
+                filledAllEmail += numberFilledEmail;
+
+                if (numberAllInputEmail === filledAllEmail) {
+                    allEmptyEmail = false;
+                }
+            }
         }
-        if (countAllEmail === filledEmail) {
-            filled = true;
-        }
-        if (filled && checked) {
+
+        if (!allEmptyEmail && !allEmptyCheckboxes) {
             btn.removeAttribute('disabled');
         } else {
             btn.setAttribute('disabled', '');
         }
     }
-
-    for (let i = 0; i < inputs.length; i++) {
-        inputs[i].addEventListener("click", check);
-        inputs[i].addEventListener("keyup", check);
-    }
-
-    // for (let i = 0; i < inputs.length; i++) {
-    //
-    //     for (let j = 0; j < newArrayInputs.length; j++) {
-    //
-    //         if (inputs[i].id === newArrayInputs[j]) {
-    //             console.log(inputs[i]);
-    //             inputs[i].addEventListener("click", check);
-    //             inputs[i].addEventListener("keyup", check);
-    //         }
-    //     }
-    // }
-    btn.addEventListener("click", check);
 
 
 }());
