@@ -20,7 +20,7 @@
         let allEmptyCheckboxes = true;
         let allEmptyEmail = true;
         let selectedAllCheckbox = null;
-        let filledAllEmail = false;
+        let filledAllEmail = null;
         let numberAllCheckboxes = null;
         let numberAllInputEmail = null;
 
@@ -58,7 +58,6 @@
             btn.setAttribute('disabled', '');
         }
     }
-
 
 }());
 
