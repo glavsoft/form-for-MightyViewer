@@ -31,7 +31,7 @@
         & > .checkbox__ {
             display: block;
 
-            & > input {
+            & > input.input__ {
                 margin: 0 5px 0 0;
             }
 
@@ -52,7 +52,7 @@
 
         }
 
-        & > .input__ > input, & > .button__ {
+        & > .input__ > input.input__, & > button.button__ {
             display: inline;
             height: 30px;
             width: 100%;
@@ -64,7 +64,7 @@
             position: relative;
             white-space: nowrap;
 
-            & > input {
+            & > input.input__ {
                 position: relative;
                 background: #eeeeee;
                 border-style: solid;
@@ -81,28 +81,30 @@
             color: #ff0000;
         }
 
-        & > .button__ {
+        & > button.button__ {
             padding: 4px;
             border: none;
             background: linear-gradient(to top, #0aa6a6, #37f3f3);
             background-color: #0de0e0;
             color: #fff;
+            text-transform: none;
+            line-height: normal;
             cursor: pointer;
         }
 
-        & > .button__:hover {
+        & > button.button__:hover {
             position: relative;
             top: -1px;
             opacity: .9;
             transition: all 60ms ease-in-out 30ms;
         }
 
-        & > .button__[disabled] {
+        & > button.button__[disabled] {
             cursor: default;
             opacity: .5;
         }
 
-        & > .button__[disabled]:hover {
+        & > button.button__[disabled]:hover {
             top: 0;
         }
     }
