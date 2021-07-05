@@ -1,4 +1,6 @@
 .embedded-form-mv[data-2306211538] {
+    padding-left: 10px;
+    padding-right: 10px;
     border: 1px solid rgba(0, 0, 0, .1);
     box-sizing: border-box;
     border-radius: 2px;
@@ -14,11 +16,10 @@
         user-select: none;
 
         & > * {
-            margin: 10px;
+            margin-bottom: 10px;
         }
 
         & > .title {
-            margin-top: 12px;
             margin-bottom: 12px;
             font-weight: 700;
             font-size: 24px;
@@ -32,7 +33,7 @@
             display: block;
 
             & > .input {
-                margin: 0 5px 0 0;
+                margin: 0 3px 0 0;
             }
 
             & > .paragraph {
@@ -44,7 +45,8 @@
             }
         }
 
-        & > * ~ * {
+        & > * ~ *,
+        & > * ~ * > * {
             font-size: 18px;
         }
 
@@ -52,13 +54,15 @@
 
         }
 
-        & > .container-input > .input,
+        & > .container-input,
         & > .button {
-            display: inline;
-            height: 30px;
+            display: inline-block;
+            height: 33px;
             width: 100%;
             max-width: 300px;
-            border-radius: 4px;
+            margin-right: 25px;
+            box-sizing: border-box;
+            vertical-align: top;
         }
 
         & > .container-input {
@@ -67,26 +71,32 @@
 
             & > .input {
                 position: relative;
+                display: block;
+                height: 100%;
+                width: 100%;
+                padding: 0 12px;
+                border-radius: 4px;
                 background: #eeeeee;
                 border-style: solid;
                 border-color: #e6e6e6;
+                font-family: inherit;
             }
         }
 
-        & > .input:after {
+        & > .container-input:after {
             content: "*";
             position: absolute;
             display: inline-block;
-            right: 4%;
-            bottom: 1%;
+            right: 1.5%;
+            bottom: 25%;
             color: #ff0000;
         }
 
         & > .button {
-            padding: 4px;
             border: none;
             background: linear-gradient(to top, #0aa6a6, #37f3f3);
             background-color: #0de0e0;
+            border-radius: 4px;
             color: #fff;
             text-transform: none;
             line-height: normal;
