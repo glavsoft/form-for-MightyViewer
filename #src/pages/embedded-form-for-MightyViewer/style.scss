@@ -1,11 +1,11 @@
-.embedded-form-mv__[data-2306211538] {
+.embedded-form-mv[data-2306211538] {
     border: 1px solid rgba(0, 0, 0, .1);
     box-sizing: border-box;
     border-radius: 2px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
     font-family: Graphik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
 
-    & > .form__ {
+    & > .form {
         max-width: 880px;
         margin-right: auto;
         margin-left: auto;
@@ -17,25 +17,25 @@
             margin: 10px;
         }
 
-        & > .title__ {
+        & > .title {
             margin-top: 12px;
             margin-bottom: 12px;
             font-weight: 700;
             font-size: 24px;
         }
 
-        & > .paragraph__ {
+        & > .paragraph {
 
         }
 
-        & > .checkbox__ {
+        & > .checkbox {
             display: block;
 
-            & > input.input__ {
+            & > .input {
                 margin: 0 5px 0 0;
             }
 
-            & > .paragraph__ {
+            & > .paragraph {
                 display: inline;
 
                 & > span {
@@ -48,11 +48,12 @@
             font-size: 18px;
         }
 
-        & > .paragraph__ {
+        & > .paragraph {
 
         }
 
-        & > .input__ > input.input__, & > button.button__ {
+        & > .container-input > .input,
+        & > .button {
             display: inline;
             height: 30px;
             width: 100%;
@@ -60,11 +61,11 @@
             border-radius: 4px;
         }
 
-        & > .input__ {
+        & > .container-input {
             position: relative;
             white-space: nowrap;
 
-            & > input.input__ {
+            & > .input {
                 position: relative;
                 background: #eeeeee;
                 border-style: solid;
@@ -72,7 +73,7 @@
             }
         }
 
-        & > .input__:after {
+        & > .input:after {
             content: "*";
             position: absolute;
             display: inline-block;
@@ -81,7 +82,7 @@
             color: #ff0000;
         }
 
-        & > button.button__ {
+        & > .button {
             padding: 4px;
             border: none;
             background: linear-gradient(to top, #0aa6a6, #37f3f3);
@@ -92,19 +93,19 @@
             cursor: pointer;
         }
 
-        & > button.button__:hover {
+        & > .button:hover {
             position: relative;
             top: -1px;
             opacity: .9;
             transition: all 60ms ease-in-out 30ms;
         }
 
-        & > button.button__[disabled] {
+        & > .button[disabled] {
             cursor: default;
             opacity: .5;
         }
 
-        & > button.button__[disabled]:hover {
+        & > .button[disabled]:hover {
             top: 0;
         }
     }

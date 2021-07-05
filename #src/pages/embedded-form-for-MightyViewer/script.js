@@ -1,8 +1,8 @@
 (function () {
 
-    let form = document.querySelector(".embedded-form-mv__[data-2306211538] > .form__");
+    let form = document.querySelector(".embedded-form-mv[data-2306211538] > .form");
     //если не будет этого класса to-connect-with__ то инпуты не будут завязаны с кнопкой отправить
-    let inputs = form.querySelectorAll('input.to-connect-with__');
+    let inputs = form.querySelectorAll('input.to-connect-with');
     let btn = form.querySelector("#btn2806211546");
 
     setTimeout(function () {
