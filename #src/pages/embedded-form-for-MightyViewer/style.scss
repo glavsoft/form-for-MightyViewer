@@ -88,11 +88,13 @@
             position: absolute;
             display: inline-block;
             right: 1.5%;
-            bottom: 25%;
+            bottom: 60%;
+            line-height: 0;
             color: #ff0000;
         }
 
         & > .button {
+            padding: 0 5px;
             border: none;
             background: linear-gradient(to top, #0aa6a6, #37f3f3);
             background-color: #0de0e0;
