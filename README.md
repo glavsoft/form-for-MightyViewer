@@ -2,7 +2,7 @@
 
 ###  Simple one page website to practise HTML and CSS and js skills.
 
-#### Demo [here](https://mvdtom.github.io/tvnc/dist)
+#### Demo [here](https://glavsoft.github.io/form-for-MightyViewer/dist/embedded-form-for-MightyViewer.html)
 
 ####  Technologies used:
 -  HTML;
