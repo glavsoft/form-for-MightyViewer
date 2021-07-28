@@ -35,8 +35,6 @@ a {
 }
 
 * {
-    //margin:0;
-    //padding:0;
     outline: none;
 }
 
@@ -65,8 +63,6 @@ p {
     /* Header
     =======================================*/
     & > .header {
-        //background-color: #e8e8e8;
-        //position: fixed;
         position: absolute;
         width: 100%;
         top: 0;
@@ -113,12 +109,10 @@ p {
             max-width: 1240px;
 
             & > .inner {
-                //display: flex;
                 width: 100vw;
                 overflow: auto;
                 flex-direction: column;
                 min-height: calc(100vh - 167px);
-                //padding: 10px 0;
                 div.table-overflow {
                     width: 99%;
                     overflow: auto;
